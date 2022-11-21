@@ -1,0 +1,47 @@
+name: Build aapt2
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Reason'     
+        required: false
+        default: 'Update package'
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Update
+        run: |
+          sudo apt-get update
+          sudo apt-get upgrade
+          sudo apt-get install openjdk-8-jdk
+          sudo apt-get install cmake
+          sudo apt-get install clang
+          sudo apt-get install git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev ccache libgl1-mesa-dev libxml2-utils xsltproc unzip
+          sudo apt-get install mingw-w64
+
+
+      - name: Repo
+        run: | 
+          mkdir ~/bin
+          PATH=~/bin:$PATH
+          curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+          chmod a+x ~/bin/repo
+          mkdir ~/src
+          cd ~/src
+          repo sync -j8
+      
+      - run: ./buildw32.sh
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist-w32-debug
+          path: build-cmake-windows
