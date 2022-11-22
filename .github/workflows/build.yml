@@ -41,7 +41,9 @@ jobs:
       #     repo sync -j8
       
       - name: buildw32
-        run: ./buildw32.sh
+        run: |
+          chmod +x buildw32.sh
+          ./buildw32.sh
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
