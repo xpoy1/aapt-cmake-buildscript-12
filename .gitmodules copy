@@ -1,0 +1,62 @@
+
+  [submodule "frameworks/base"]
+	shallow = true
+	path = frameworks/base
+	url = https://android.googlesource.com/platform/frameworks/base.git
+        branch = android12--mainline-release
+  [submodule "frameworks/native"]
+	shallow = true
+	path = frameworks/native
+	url = https://android.googlesource.com/platform/frameworks/native.git
+        branch = android12--mainline-release
+  [submodule "system/core"]
+	shallow = true
+	path = system/core
+	url = https://android.googlesource.com/platform/system/core.git
+        branch = android12--mainline-release
+  [submodule "external/expat"]
+	shallow = true
+	path = external/expat
+	url = https://android.googlesource.com/platform/external/expat.git
+        branch = android12--mainline-release
+  [submodule "external/libpng"]
+	shallow = true
+	path = external/libpng
+	url = https://android.googlesource.com/platform/external/libpng.git
+        branch = android12--mainline-release
+  [submodule "external/zlib"]
+	shallow = true
+	path = external/zlib
+	url = https://android.googlesource.com/platform/external/zlib.git
+        branch = android12--mainline-release
+  [submodule "external/safe-iop"]
+	shallow = true
+	path = external/safe-iop
+	url = https://android.googlesource.com/platform/external/safe-iop.git
+        branch = android12--mainline-release
+  [submodule "external/protobuf"]
+	shallow = true
+	path = external/protobuf
+	url = https://android.googlesource.com/platform/external/protobuf.git
+        branch = android12--mainline-release
+  [submodule "external/libcxx"]
+	shallow = true
+	path = external/libcxx
+	url = https://android.googlesource.com/platform/external/libcxx.git
+        branch = android12--mainline-release
+  [submodule "external/libcxxabi"]
+	shallow = true
+	path = external/libcxxabi
+	url = https://android.googlesource.com/platform/external/libcxxabi.git
+        branch = android12--mainline-release
+  [submodule "external/compiler-rt"]
+	shallow = true
+	path = external/compiler-rt
+	url = https://android.googlesource.com/platform/external/compiler-rt.git
+    branch = android12--mainline-release
+  
+  [submodule "libnativehelper"]
+	shallow = true
+	path = libnativehelper
+	url = https://android.googlesource.com/platform/libnativehelper.git
+    branch = android12--mainline-release

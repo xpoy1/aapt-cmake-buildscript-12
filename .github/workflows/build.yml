@@ -17,6 +17,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: 'true'
+
       - name: Update
         run: |
           sudo apt-get update
@@ -26,18 +31,17 @@ jobs:
           sudo apt-get install clang
           sudo apt-get install git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev ccache libgl1-mesa-dev libxml2-utils xsltproc unzip
           sudo apt-get install mingw-w64
-
-
-      - name: Repo
-        run: | 
-          mkdir ~/bin
-          PATH=~/bin:$PATH
-          curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
-          chmod a+x ~/bin/repo
-          repo init
-          repo sync -j8
+      # - name: Repo
+      #   run: | 
+      #     mkdir ~/bin
+      #     PATH=~/bin:$PATH
+      #     curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+      #     chmod a+x ~/bin/repo
+      #     repo init
+      #     repo sync -j8
       
-      - run: ./buildw32.sh
+      - name: buildw32
+        run: ./buildw32.sh
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
