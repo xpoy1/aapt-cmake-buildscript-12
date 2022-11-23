@@ -1,12 +1,12 @@
-sudo update-alternatives --config x86_64-w64-mingw32-gcc
-sudo update-alternatives --config x86_64-w64-mingw32-g++
-sudo update-alternatives --config x86_64-w64-mingw32-gfortran
-sudo update-alternatives --config x86_64-w64-mingw32-gnat
+sudo update-alternatives --auto --config x86_64-w64-mingw32-gcc
+sudo update-alternatives --auto  --config x86_64-w64-mingw32-g++
+sudo update-alternatives --auto --config x86_64-w64-mingw32-gfortran
+sudo update-alternatives --auto --config x86_64-w64-mingw32-gnat
 
-sudo update-alternatives --config i686-w64-mingw32-gcc
-sudo update-alternatives --config i686-w64-mingw32-g++
-sudo update-alternatives --config i686-w64-mingw32-gfortran
-sudo update-alternatives --config i686-w64-mingw32-gnat
+sudo update-alternatives --auto --config i686-w64-mingw32-gcc
+sudo update-alternatives --auto --config i686-w64-mingw32-g++
+sudo update-alternatives --auto --config i686-w64-mingw32-gfortran
+sudo update-alternatives --auto --config i686-w64-mingw32-gnat
 
 
 #进入工作目录
